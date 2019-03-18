@@ -1,0 +1,7 @@
+{
+  "name": "my_portfolio_site",
+  "private": true,
+  "dependencies": {
+    "rellax": "^1.8.0"
+  }
+}

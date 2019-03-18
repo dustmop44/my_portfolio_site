@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Juwon Cha</title>
+		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+	<body>
+		<div class="container">
+			<header class="navbar navbar-fixed-top navbar-inverse">
+		      <div class="container">
+		        <%= link_to "Juwon Cha", root_path, id: "logo" %>
+		        <nav>
+		          <ul class="nav navbar-nav navbar-right">
+		            <li><%= link_to "About Me", '#about_me' %></li>
+		            <li><%= link_to "Projects", '#projects' %></li>
+		            <li><%= link_to "Resume", '#resume' %></li>
+		          </ul>
+		        </nav>
+		      </div>
+		    </header>
+		    <div class="centered">
+		    	<h1 class = "rellax" data-rellax-speed="-3">Human. Nature.</h1>
+		    </div>
+		</div>
+		<script src="rellax.js"></script>
+		<script>
+		  // Accepts any class name
+		  var rellax = new Rellax('.rellax', {
+    		center: true
+  		  });
+		</script>
+		<div class = "container">
+		<div class = "movedown">
+			<div id =  "quotess">
+				<% @quotes.each do |quote| %>
+					<script>
+						var quotetext = '<%= quote[:title] %>';
+						var quotelink = '<%= quote[:post_url] %>';
+						appenddiv(quotetext, quotelink);
+					</script>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	</body>
+	<% @firstimgs.each do |img| %>
+		<div>
+			<%= link_to image_tag("#{img[:img_url]}", class: "img-fluid" ), "http://reddit.com/#{img[:post_url]}" %>
+		</div>
+	<% end %>
+	<% @restimgs.each do |img| %>
+		<%= link_to image_tag("#{img[:img_url]}", data: {src: "#{img[:img_url]}"}, class: "img-fluid lazy"), "http://reddit.com/#{img[:post_url]}" %>
+	<% end %>
+	<script src="rellax.js"></script>
+		<script>
+		  // Accepts any class name
+		  var rellax = new Rellax('.rellax', {
+    		center: true
+  		  });
+		</script>
+</html>
