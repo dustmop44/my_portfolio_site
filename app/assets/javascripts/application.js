@@ -69,7 +69,8 @@ function appenddiv(quote, quotelink) {
 	 + (Math.floor(Math.random() * 500) + 1500)
 	 + 'px"><div class = "col-md-4 col-md-offset-'
 	 + Math.floor(Math.random() * 8)
-	 + ' faded rellax" data-rellax-speed = "-3"><a class: "faded" href= "http://reddit.com/' + quotelink + '">'
+	 + ' faded rellax" data-rellax-speed = "-'
+	 + (Math.floor(Math.random() * 3) + 2) + '"><a class: "faded" href= "http://reddit.com/' + quotelink + '">'
 	 + quote + '</a></div></div></div>');
 }
 
