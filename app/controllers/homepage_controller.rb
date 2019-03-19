@@ -9,6 +9,10 @@ class HomepageController < ApplicationController
   	@index = 0
   end
 
+  def download_resume
+  	send_file "public/Juwon_Cha_Resume.pdf", type: "application/pdf", x_sendfile: true
+  end
+
   #github.com/saadq
   def scrape_first_imgs
     url = "https://reddit.com/r/earthporn/top.json?sort=top&t=all&limit=1000&before=t3_6vz211"

@@ -13,9 +13,9 @@
 		        <%= link_to "Juwon Cha", root_path, id: "logo" %>
 		        <nav>
 		          <ul class="nav navbar-nav navbar-right">
-		            <li><%= link_to "About Me", '#about_me' %></li>
-		            <li><%= link_to "Projects", '#projects' %></li>
-		            <li><%= link_to "Resume", '#resume' %></li>
+		            <li><%= link_to "About Me", '#aboutme', 'data-toggle' => 'modal' %></li>
+		            <li><%= link_to "Projects", '#projects', 'data-toggle' => 'modal'%></li>
+		            <li><%= link_to "Resume", '#downloadresume', 'data-toggle' => 'modal' %></li>
 		          </ul>
 		        </nav>
 		      </div>
@@ -60,4 +60,62 @@
     		center: true
   		  });
 		</script>
+		<div class="modal fade bd-example-modal-lg" id="aboutme" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title text-primary" id="ModalCenterTitle">About Me</h3>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+			  <div class="modal-body">
+			        <h5><p class="indent">  With a long history of entrepreneurial endeavors and after graduating with four majors, I set out to study computer science. Within a year of studying the exact same coursework, projects, and exams a UC Berkeley CS student would have taken, I have built a few personal Ruby on Rails apps, contributed to open source projects and am ready to take on a full-time job.</p>
+
+			       	<p class = "indent">   I am driven and adaptable with a variety of experiences from many different areas of industry. I can't wait to learn more, join an impactful team, and help a company succeed. This site was built from the ground up by me. Scroll down and learn something cool today!</p></h5>
+			  </div>
+		      <div class="modal-footer">
+		      	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<div class="modal fade" id="downloadresume" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h3 class="modal-title text-primary" id="exampleModalLabel">Download Resume</h3>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        Would you like to proceed with your download?
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary"><%= link_to "PDF", download_resume_path %></button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="projects" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h3 class="modal-title text-primary" id="exampleModalLabel">Github Projects</h3>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        Would you like to proceed to github and check out my projects?
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary"><%= link_to "Github", 'https://github.com/dustmop44' %></button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </html>
